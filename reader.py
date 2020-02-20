@@ -12,7 +12,7 @@ def grouper(iterable, n, fillvalue=None):
     "Collect data into fixed-length chunks or blocks"
     # grouper('ABCDEFG', 3, 'x') --> ABC DEF Gxx"
     args = [iter(iterable)] * n
-    return zip_longest(*args, fillvalue=fillvalue)
+    return zip(*args)
 
 
 def read_input(fname):
@@ -28,4 +28,6 @@ def read_input(fname):
 
 
 if __name__ == "__main__":
-    print(read_input('input/a_example.txt'))
+    inp = read_input('input/a_example.txt')
+    print(inp.n_books)
+    print(inp.libraries[0].signup_time)
