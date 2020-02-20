@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
 from collections import namedtuple
-from itertools import zip_longest
 
 Library = namedtuple("Library", ['n_books', 'signup_time', 'throughput', 'books'])
 
