@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 from collections import namedtuple
+from os import listdir
 
 Library = namedtuple("Library", ['n_books', 'signup_time', 'throughput', 'books'])
 
@@ -24,6 +25,14 @@ def read_input(fname):
             libraries.append(Library(*library[0].split(), library[1].split()))
 
     return Input(n, t, m, books, libraries)
+
+
+def iter_libraries(fname):
+    with open(fname) as f:
+        f.readline()
+        f.readline()
+        for library in grouper(f.readlines(), 2):
+            yield Library(*library[0].split(), library[1].split())
 
 
 if __name__ == "__main__":
