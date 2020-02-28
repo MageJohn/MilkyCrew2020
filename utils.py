@@ -18,6 +18,7 @@ INPUT_FILES = tuple(map(path.join, repeat('input/'), listdir('input/')))
 
 Library = namedtuple("Library", ['index', 'n_books', 'signup_time', 'throughput', 'books'])
 
+
 Input = namedtuple("Input", ['n_books', 'n_libraries', 'n_days', 'books', 'libraries'])
 
 
@@ -60,7 +61,7 @@ def grouper(iterable, n, fillvalue=None):
 
 
 def to_int_list(string):
-    return tuple(map(int, string.split()))
+    return list(map(int, string.split()))
 
 
 def _read_input_lengths(fd):
